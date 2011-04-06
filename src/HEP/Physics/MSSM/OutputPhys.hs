@@ -1,6 +1,6 @@
 {-# LANGUAGE BangPatterns #-}
 
-module HEP.Physics.MSSM.Type where
+module HEP.Physics.MSSM.OutputPhys where
 
 import Data.Binary 
 import Data.List
@@ -190,6 +190,7 @@ makeassocmass x =   ( Higgs      , mass_Mh   x )
 sortmassassoc :: [(MassType,Double)] -> [(MassType,Double)]
 sortmassassoc lst = sortBy sortfun lst 
     where sortfun (_,x) (_,y) = compare x y
+
 
 rparityodd_massassoc :: [(MassType,Double)] -> [(MassType,Double)]
 rparityodd_massassoc = filter (isrparityodd.fst) 

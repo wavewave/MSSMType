@@ -1,20 +1,32 @@
 {-# LANGUAGE NamedFieldPuns, RecordWildCards #-}
 
-module HEP.Physics.MSSM.LesHouches (
-  outputPhysToLesHouches
-  ) where 
+module HEP.Physics.MSSM.SLHA where
+
+import qualified Data.ByteString as B
+import Crypto.Classes
+import Data.Digest.Pure.MD5 
+
+data SLHA = SLHA { 
+    slhaContent :: B.ByteString 
+  }
+
+slhaMD5 :: SLHA -> MD5Digest
+slhaMD5 (SLHA bstr)  = hash' bstr
+
+
+{-
 
 import Text.StringTemplate.Helpers 
 
-import HEP.Physics.MSSM.Type
+import HEP.Physics.MSSM.OutputPhys
 
 render :: String -> [(String,String)] -> String
 render = flip render1 
 
 pp = show
 
-outputPhysToLesHouches :: String -> OutputPhys -> String 
-outputPhysToLesHouches tmpl OutputPhys {..} = 
+outputPhysToSLHA :: String -> OutputPhys -> String 
+outputPhysToSLHA tmpl OutputPhys {..} = 
   render tmpl [ ("mass_Mh"  , pp mass_Mh  )
               , ("mass_MHH" , pp mass_MHH )
               , ("mass_MH3" , pp mass_MH3 )
@@ -46,4 +58,4 @@ outputPhysToLesHouches tmpl OutputPhys {..} =
               , ("mass_MSn1", pp mass_MSn1)
               , ("mass_MSt2", pp mass_MSt2)
               , ("mass_MSb2", pp mass_MSb2)
-              , ("mass_MSl2", pp mass_MSl2) ] 
+              , ("mass_MSl2", pp mass_MSl2) ] -}
