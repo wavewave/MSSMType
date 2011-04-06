@@ -8,7 +8,7 @@ import Data.Digest.Pure.MD5
 
 data SLHA = SLHA { 
     slhaContent :: B.ByteString 
-  }
+  } deriving Show
 
 slhaMD5 :: SLHA -> MD5Digest
 slhaMD5 (SLHA bstr)  = hash' bstr
