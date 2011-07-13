@@ -1,6 +1,36 @@
 {-# LANGUAGE BangPatterns #-}
 
-module HEP.Physics.MSSM.OutputPhys where
+-- | 
+-- Module     : Hep.Physics.MSSM.OutputPhys
+-- Copyright  : Ian-Woo Kim 2010-2011
+-- License    : GPL-3
+--
+-- Maintainer : ianwookim@gmail.com
+-- Stability  : experimental
+-- Portability : unknown 
+-- 
+-- Physical parameters for a particular MSSM model point 
+-- with some convenience pattern functions
+
+module HEP.Physics.MSSM.OutputPhys (
+  -- * Data types
+    OutputPhys(..)
+  , MassType(..)
+  
+  -- * default null output
+  , nulloutput 
+    
+  -- * make functions
+  , makeassocmass
+  , sortmassassoc
+  , rparityodd_massassoc
+  , nonSM_massassoc
+  
+ -- * boolean functions 
+  , isNonSM
+  , isrparityodd
+  , isColored
+  ) where
 
 import Data.Binary 
 import Data.List
@@ -65,6 +95,7 @@ data MassType = Higgs | HeavyHiggs | AHiggs | CHiggs
 
 --instance NFData MassType 
 
+nulloutput :: OutputPhys
 nulloutput = OutputPhys 0 0 0 0 0 0 0 0 0 0 
                         0 0 0 0 0 0 0 0 0 0 
                         0 0 0 0 0 0 0 0 0 0 
