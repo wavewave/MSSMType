@@ -1,14 +1,17 @@
-{-# LANGUAGE NamedFieldPuns, RecordWildCards #-}
+{-# LANGUAGE NamedFieldPuns, RecordWildCards, DeriveDataTypeable #-}
 
 module HEP.Physics.MSSM.SLHA where
 
 import qualified Data.ByteString as B
 import Crypto.Classes
 import Data.Digest.Pure.MD5 
+import Data.Typeable
+import Data.Data
+
 
 data SLHA = SLHA { 
     slhaContent :: B.ByteString 
-  } deriving Show
+  } deriving (Show,Typeable,Data)
 
 slhaMD5 :: SLHA -> MD5Digest
 slhaMD5 (SLHA bstr)  = hash' bstr
