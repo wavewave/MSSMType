@@ -1,22 +1,31 @@
 Name:		MSSMType
-Version:	0.0.3.0
+Version:	0.0.999
 Synopsis:	spectrum type for MSSM 
-Description: 	spectrum type for MSSM
+Description: 	This package provides common input/output types needed for 
+                MSSM anaysis.
 License: 	BSD3
 License-file:	LICENSE
 Author:		Ian-Woo Kim
 Maintainer: 	Ian-Woo Kim <ianwookim@gmail.com>
 Build-Type: 	Simple
-Cabal-Version:  >= 1.2
-
+Cabal-Version:  >= 1.8 
+data-files: 
 
 Library
   hs-source-dirs: src
-  ghc-options: 	-Wall -O2 -threaded -funbox-strict-fields -fno-warn-unused-do-bind
+  ghc-options: 	-Wall -O2 -threaded -funbox-strict-fields -fno-warn-unused-do-bind -fno-warn-orphans 
   ghc-prof-options: -caf-all -auto-all
-  Build-Depends: base>4, mtl>2, binary, HStringTemplate, HStringTemplateHelpersIW, 
-                 pureMD5, crypto-api, bytestring
+  Build-Depends:   base>4 
   Exposed-Modules: 
-                   HEP.Physics.MSSM.OutputPhys
-                   HEP.Physics.MSSM.SLHA
-		 
+                   HEP.Physics.MSSM.Model.MSUGRA
+
+
+                   -- mtl>2, 
+                   -- binary, 
+                   -- HStringTemplate, 
+                   -- HStringTemplateHelpersIW, 
+                   -- pureMD5, 
+                   -- crypto-api, 
+                   -- bytestring
+                   -- HEP.Physics.MSSM.OutputPhys
+                   -- HEP.Physics.MSSM.SLHA
