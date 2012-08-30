@@ -14,6 +14,11 @@ sgnminus :: Sign
 sgnminus = Sign False 
 
 -- | 
+toInt :: Sign -> Int 
+toInt (Sign True) = 1 
+toInt (Sign False) = -1
+
+-- | 
 data MSUGRAInput = MSUGRAInput { mSUGRA_m0 :: Double
                                , mSUGRA_m12 :: Double
                                , mSUGRA_a0 :: Double

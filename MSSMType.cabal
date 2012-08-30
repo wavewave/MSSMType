@@ -15,9 +15,11 @@ Library
   hs-source-dirs: src
   ghc-options: 	-Wall -O2 -threaded -funbox-strict-fields -fno-warn-unused-do-bind -fno-warn-orphans 
   ghc-prof-options: -caf-all -auto-all
-  Build-Depends:   base>4 
+  Build-Depends:   base>4, 
+                   binary== 0.5.*
   Exposed-Modules: 
                    HEP.Physics.MSSM.Model.MSUGRA
+                   HEP.Physics.MSSM.OutputPhys
 
 
                    -- mtl>2, 
@@ -27,5 +29,4 @@ Library
                    -- pureMD5, 
                    -- crypto-api, 
                    -- bytestring
-                   -- HEP.Physics.MSSM.OutputPhys
                    -- HEP.Physics.MSSM.SLHA
