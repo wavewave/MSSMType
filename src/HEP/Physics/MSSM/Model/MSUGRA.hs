@@ -2,21 +2,7 @@
 
 module HEP.Physics.MSSM.Model.MSUGRA where
 
-newtype Sign = Sign Bool 
-    deriving (Show,Eq,Ord,Enum)
-
--- | 
-sgnplus :: Sign 
-sgnplus = Sign True 
-
--- |
-sgnminus :: Sign 
-sgnminus = Sign False 
-
--- | 
-toInt :: Sign -> Int 
-toInt (Sign True) = 1 
-toInt (Sign False) = -1
+import HEP.Physics.MSSM.Model.Common
 
 -- | 
 data MSUGRAInput = MSUGRAInput { mSUGRA_m0 :: Double
